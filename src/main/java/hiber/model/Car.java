@@ -2,18 +2,18 @@ package hiber.model;
 
 import javax.persistence.*;
 
-@Entity
-@Table(name = "cars")
+@Entity(name = "Car")
+@Table(name = "car")
 public class Car {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "car_id")
     private Long id;
     @Column(name = "model")
     String model;
     @Column(name = "series")
     int series;
-    @OneToOne(mappedBy = "car")
-    private User user;
+
 
     public Car() {
 
